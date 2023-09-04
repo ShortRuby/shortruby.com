@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby file: ".ruby-version"
 
 # Stand-alone Sitepress server and compiler.
 gem "sitepress", "~> 3.2"
