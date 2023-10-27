@@ -98,4 +98,5 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
   config.action_mailer.default_url_options = { host: "shortruby.com", protocol: "https" }
   config.active_job.queue_adapter = :litejob
+  config.action_mailer.delivery_method = :resend
 end

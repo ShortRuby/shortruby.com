@@ -51,6 +51,7 @@ gem "bootsnap", require: false
 
 gem "litestack", "~> 0.4.1"
 gem "mailkick", "~> 1.2"
+gem "resend"
 gem "sitepress-rails", "~> 4.0"
 gem "view_component"
 
