@@ -4,9 +4,10 @@ class Videos::SubscribersController < ApplicationController
   before_action :check_existing_subscriber, only: [:create]
 
   def create
-    @subscriber = Subscriber.new(subscriber_params)
-    if @subscriber.save
-      @subscriber.subscribe("video_updates")
+    subscriber = Subscriber.new(subscriber_params)
+    if subscriber.save
+      subscriber.subscribe("video_updates")
+      SubscribedNotificationMailer.notify(subscriber).deliver_later
       flash[:notice] = "You've subscribed successfully!"
     else
       flash[:error] = "There was a problem subscribing you!"
