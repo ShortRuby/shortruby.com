@@ -1,2 +1,2 @@
-web: bundle exec sitepress server
-tailwind: npx tailwindcss -i ./assets/stylesheets/main.css -o ./assets/stylesheets/site.css --watch
+web: env RUBY_DEBUG_OPEN=true bundle exec rdbg -n --open -c -- bin/rails server -p 3000
+css: bin/rails tailwindcss:watch
