@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   namespace :videos do
-    resources :subscribers, only: [:create]
+    resources :subscribers, only: %i(create)
+    resource :unsubscribe, only: %i(new destroy)
   end
 end

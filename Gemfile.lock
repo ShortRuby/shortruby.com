@@ -172,6 +172,7 @@ GEM
       activesupport (>= 6.1)
     marcel (1.0.2)
     matrix (0.4.2)
+    method_source (1.0.0)
     mime-types (3.5.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.1003)
@@ -301,6 +302,10 @@ GEM
     unicode-display_width (2.5.0)
     url_mount (0.2.1)
       rack
+    view_component (3.6.0)
+      activesupport (>= 5.2.0, < 8.0)
+      concurrent-ruby (~> 1.0)
+      method_source (~> 1.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -344,6 +349,7 @@ DEPENDENCIES
   tailwindcss-rails
   turbo-rails
   tzinfo-data
+  view_component
   web-console
 
 RUBY VERSION
