@@ -1,5 +1,5 @@
 <div class="container relative mx-auto">
-  <header data-controller="menu" class="px-5 mx-auto mt-16 max-w-7xl md:mt-12">
+  <header data-controller="menu" class="px-5 mx-auto mt-8 md:mt-10 max-w-7xl md:mt-12">
     <nav class="flex flex-col md:flex-row">
       <div class="flex items-center justify-between w-full">
         <%= link_to root_path, class: "w-12 lg:w-12" do %>
@@ -13,7 +13,7 @@
           </button>
         </div>
       </div>
-      <div id="menuItems" class="flex-col hidden space-x-0 space-y-1 lg:items-center lg:flex md:flex-row md:space-y-0 md:space-x-4" data-menu-target="items">
+      <div id="menuItems" class="flex-col hidden space-x-0 space-y-1 md:items-center md:flex md:flex-row md:space-y-0 md:space-x-4" data-menu-target="items">
         <%= link_to page_path("videos"),class: "inline-block font-gotham-bold text-black no-underline font-bold text-base uppercase px-2.5 py-1 leading-6 align-baseline antialiased hover:bg-techntrade-yellow-400" do %>
           Videos
         <% end %>
