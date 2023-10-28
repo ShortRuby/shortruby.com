@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
+require "postmark-rails/templated_mailer"
+
 class SubscribedNotificationMailer < ApplicationMailer
-  def notify(subscriber)
-    @subscriber = subscriber
-    mail to: subscriber.email, subject: "You've subscribed to ShortRuby Videos!"
+  include PostmarkRails::TemplatedMailerMixin
+
+  def subscribed(to:, unsubscribe_url:)
+    self.template_model = { unsubscribe_url: }
+
+    mail(to:)
   end
 end

@@ -7,6 +7,11 @@ class Videos::SubscribersController < ApplicationController
     subscriber = Subscriber.new(subscriber_params)
     if subscriber.save
       subscriber.subscribe("video_updates")
+      SubscribedNotificationMailer.subscribed(
+        to: subscriber.email,
+        unsubscribe_url: new_videos_unsubscribe_url(subscriber)
+      ).deliver_later
+
       flash[:notice] = "You've subscribed successfully!"
     else
       flash[:error] = "There was a problem subscribing you!"
