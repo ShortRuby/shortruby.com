@@ -8,6 +8,8 @@
       <div class="mx-auto text-3xl font-bold tracking-tight text-center text-gray-900 max-w-7xl sm:text-4xl">
         <p class="inline sm:block">Sign up to get updates when I launch.</p>
       </div>
+      <div class="mx-auto max-w-7xl" id="notification">
+      </div>
       <%= form_with model: Subscriber.new, url: videos_subscribers_path, class: 'mx-auto mt-10 max-w-7xl' do |form| %>
         <div class="flex max-w-md mx-auto gap-x-4">
           <%= form.label :email, "Email address", class: 'sr-only' %>
