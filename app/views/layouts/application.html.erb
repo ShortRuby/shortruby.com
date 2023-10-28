@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="h-full antialiased bg-white" lang="en">
+  <head>
+    <title>Short Ruby</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script defer data-domain="shortruby.com" src="https://plausible.io/js/script.js"></script>
+  </head>
+  <body class="flex flex-col min-h-full">
+    <main>
+      <%= render partial:"layouts/header" %>
+      <div id="flash" class="container mx-auto my-5 md:my-10 max-w-7xl">
+        <%= render "layouts/flash" %>
+      </div>
+      <%= yield %>
+    </main>
+    <%= render partial: "layouts/footer" %>
+  </body>
+</html>

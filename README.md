@@ -1,21 +1,24 @@
-# Getting started
+# README
 
-This is the project that is powering the https://shortruby.com - main website.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Contributing
+Things you may want to cover:
 
-This project uses https://sitepress.cc
+* Ruby version
 
-### Starting the server
+* System dependencies
 
-First thing you'll want to do is start the preview server:
+* Configuration
 
-1. Install [overmind](https://github.com/DarthSim/overmind)
+* Database creation
 
-2. Run locally the server
+* Database initialization
 
-```sh
-$ overmind start -f Procfile.dev
-```
+* How to run the test suite
 
-Then open http://127.0.0.1:8080 and you'll see the main page
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

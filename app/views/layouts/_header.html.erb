@@ -1,0 +1,23 @@
+<div class="container relative mx-auto">
+  <header data-controller="menu" class="px-5 mx-auto mt-8 md:mt-10 max-w-7xl md:mt-12">
+    <nav class="flex flex-col md:flex-row">
+      <div class="flex items-center justify-between w-full">
+        <%= link_to root_path, class: "w-12 lg:w-12" do %>
+          <%= image_tag "logo.png", class: "object-contain" %>
+        <% end %>
+        <div class="md:hidden">
+          <button id="menuButton" class="p-4 rounded-md ring-1 ring-gray-100" data-action="menu#toggle">
+            <span class="block w-5 h-0.5 bg-black mb-1"></span>
+            <span class="block w-5 h-0.5 bg-black mb-1"></span>
+            <span class="block w-5 h-0.5 bg-black"></span>
+          </button>
+        </div>
+      </div>
+      <div id="menuItems" class="flex-col hidden space-x-0 space-y-1 md:items-center md:flex md:flex-row md:space-y-0 md:space-x-4" data-menu-target="items">
+        <%= link_to page_path("videos"),class: "inline-block font-gotham-bold text-black no-underline font-bold text-base uppercase px-2.5 py-1 leading-6 align-baseline antialiased hover:bg-techntrade-yellow-400" do %>
+          Videos
+        <% end %>
+      </div>
+    </nav>
+  </header>
+</div>
