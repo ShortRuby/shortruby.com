@@ -1,8 +1,32 @@
+---
+title: ShortRuby - Videos and Podcasts
+layout: application
+---
 <div class="container mx-auto">
   <div class="max-w-4xl mx-auto bg-white sm:py-12 lg:py-12">
-    <h2 class="my-5 text-4xl font-bold tracking-tight text-center text-blue-800 sm:block">Short Ruby Videos</h2>
+    <h2 class="my-5 text-4xl font-bold tracking-tight text-center text-blue-800 sm:block">Short Ruby Videos/Podcasts</h2>
     <div class="relative mx-auto overflow-hidden">
-      <%= image_tag "project.png", class: "object-cover object-top mx-auto", width: "600px" %>
+      <figure>
+        <%= image_tag(
+        "project.png",
+        class: "object-cover object-top mx-auto",
+        width: "600px",
+        alt: "Screenshot with the post where I announced the idea of Short Ruby Videos podcast"
+        )
+      %>
+        <figcaption class="hidden">
+          I'm thinking about starting a podcast or maybe a video series.
+          Would anyone listen to organized debates about Ruby and related topics?
+          I am thinking about topics like:
+          - ServiceObjects vs NoServiceObjects
+          - VScode vs RubyMine vs Vim
+          - Callbacks vs Composition and Delegation
+          - SOLID vs CUPID or DRY vs WET
+          The focus would not be on a side winning but on:
+          How to think about each concept and listen to experienced people with these concepts why they would pick one or the other.
+          I have no experience with online videos thus, this will be like a learning project for me.
+        </figcaption>
+      </figure>
     </div>
     <div class="px-6 mx-auto my-10 max-w-7xl lg:px-8">
       <div class="mx-auto text-3xl font-bold tracking-tight text-center text-gray-900 max-w-7xl sm:text-4xl">
