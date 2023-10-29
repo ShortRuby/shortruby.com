@@ -100,8 +100,30 @@ GIT
       zeitwerk (~> 2.6)
 
 GEM
+  remote: https://packager.dev/avo-hq/
+  specs:
+    avo (3.0.1.beta23)
+      actionview (>= 6.1)
+      active_link_to
+      activerecord (>= 6.1)
+      activesupport (>= 6.1)
+      addressable
+      docile
+      dry-initializer
+      httparty
+      inline_svg
+      meta-tags
+      pagy
+      turbo-rails
+      view_component (>= 3.0.0)
+      zeitwerk (>= 2.6.2)
+
+GEM
   remote: https://rubygems.org/
   specs:
+    active_link_to (1.0.5)
+      actionpack
+      addressable
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
@@ -127,8 +149,10 @@ GEM
     debug (1.8.0)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    docile (1.4.0)
     drb (2.1.1)
       ruby2_keywords
+    dry-initializer (3.1.1)
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -139,11 +163,17 @@ GEM
     http_router (0.11.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    inline_svg (1.9.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.6.0)
     irb (1.8.3)
       rdoc
@@ -172,6 +202,8 @@ GEM
       activesupport (>= 6.1)
     marcel (1.0.2)
     matrix (0.4.2)
+    meta-tags (2.19.0)
+      actionpack (>= 3.2.0, < 7.2)
     method_source (1.0.0)
     mime-types (3.5.1)
       mime-types-data (~> 3.2015)
@@ -179,6 +211,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
+    multi_xml (0.6.0)
     net-imap (0.4.2)
       date
       net-protocol
@@ -196,6 +229,7 @@ GEM
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     oj (3.16.1)
+    pagy (6.1.0)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -331,6 +365,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  avo (>= 3.0.1.beta9)!
   bootsnap
   capybara
   debug

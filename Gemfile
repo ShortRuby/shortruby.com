@@ -49,6 +49,7 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "avo", ">= 3.0.1.beta9", source: "https://packager.dev/avo-hq/"
 gem "litestack", "~> 0.4.1"
 gem "mailkick", "~> 1.2"
 gem "postmark"
