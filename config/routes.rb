@@ -18,4 +18,8 @@ Rails.application.routes.draw do
     resources :subscribers, only: %i(create)
     resource :unsubscribe, only: %i(new destroy)
   end
+
+  namespace :ready_room do
+    resource :dashboard, only: %i(show)
+  end
 end
