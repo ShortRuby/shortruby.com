@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/lucianghinda/passwordless
+  revision: 254f628422b0333c00065e9610777291cdd776c6
+  branch: lg/add-notice-when-sign-out
+  specs:
+    passwordless (1.0.1)
+      bcrypt (>= 3.1.11)
+      rails (>= 5.1.4)
+
+GIT
   remote: https://github.com/rails/rails.git
   revision: e33dbe1b3d423143685154b97ae0992f4ab821b8
   branch: main
@@ -128,6 +137,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     base64 (0.1.1)
+    bcrypt (3.1.19)
     bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -373,6 +383,7 @@ DEPENDENCIES
   jbuilder
   litestack (~> 0.4.1)
   mailkick (~> 1.2)
+  passwordless (~> 1.0)!
   postmark
   postmark-rails
   puma (>= 5.0)
@@ -391,7 +402,6 @@ DEPENDENCIES
   tailwindcss-rails
   turbo-rails
   tzinfo-data
-  view_component
   web-console
 
 RUBY VERSION

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2023_10_27_085250) do
+ActiveRecord::Schema[7.2].define(version: 2023_10_30_112424) do
+  create_table "admins", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+  end
+
   create_table "mailkick_subscriptions", force: :cascade do |t|
     t.string "subscriber_type"
     t.integer "subscriber_id"
@@ -18,6 +25,18 @@ ActiveRecord::Schema[7.2].define(version: 2023_10_27_085250) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subscriber_type", "subscriber_id", "list"], name: "index_mailkick_subscriptions_on_subscriber_and_list", unique: true
+  end
+
+  create_table "passwordless_sessions", force: :cascade do |t|
+    t.string "authenticatable_type"
+    t.integer "authenticatable_id"
+    t.datetime "timeout_at", precision: nil, null: false
+    t.datetime "expires_at", precision: nil, null: false
+    t.datetime "claimed_at", precision: nil
+    t.string "token_digest", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.index ["authenticatable_type", "authenticatable_id"], name: "authenticatable"
   end
 
   create_table "subscribers", force: :cascade do |t|

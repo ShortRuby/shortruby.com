@@ -1,8 +1,16 @@
 # For more information regarding these settings check out our docs https://docs.avohq.io
 # The values disaplayed here are the default ones. Uncomment and change them to fit your needs.
+
+Rails.configuration.to_prepare do
+  Avo::ApplicationController.include Admins::Current
+  Avo::ApplicationController.include Admins::Authenticate
+end
+
 Avo.configure do |config|
   ## == Routing ==
-  config.root_path = "/bridge"
+  config.root_path = "/ready_room/admin"
+  config.sign_out_path_name = :admins_sign_out_path
+  config.home_path = "/ready_room/admin/resources/subscribers"
   # used only when you have custom `map` configuration in your config.ru
   # config.prefix_path = "/internal"
 
@@ -22,9 +30,10 @@ Avo.configure do |config|
   end
 
   ## == Authentication ==
-  # config.current_user_method = {}
-  # config.authenticate_with do
-  # end
+  # config.current_user_method = :current_admin
+  config.authenticate_with do
+    authenticate_admin!
+  end
 
   ## == Authorization ==
   # config.authorization_methods = {
