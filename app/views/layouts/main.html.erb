@@ -12,6 +12,9 @@
   </head>
   <body class="flex flex-col min-h-full">
     <main class="flex-auto">
+      <div id="flash" class="container mx-auto my-5 md:my-10 max-w-7xl">
+        <%= render "layouts/flash" %>
+      </div>
       <%= yield %>
     </main>
     <%= render partial: "layouts/footer" %>

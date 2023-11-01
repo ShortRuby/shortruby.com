@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount Avo::Engine, at: Avo.configuration.root_path
+  passwordless_for :admins, at: "/ready_room"
+
   sitepress_pages
   sitepress_root
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -14,5 +17,9 @@ Rails.application.routes.draw do
   namespace :videos do
     resources :subscribers, only: %i(create)
     resource :unsubscribe, only: %i(new destroy)
+  end
+
+  namespace :ready_room do
+    resource :dashboard, only: %i(show)
   end
 end

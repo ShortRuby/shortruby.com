@@ -371,3 +371,6 @@ Rails/FilePath:
 
 Minitest/MultipleAssertions:
   Max: 6
+
+Rails/RefuteMethods:
+  EnforcedStyle: refute

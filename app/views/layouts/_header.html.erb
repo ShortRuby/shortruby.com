@@ -13,9 +13,17 @@
           </button>
         </div>
       </div>
-      <div id="menuItems" class="flex-col hidden space-x-0 space-y-1 md:items-center md:flex md:flex-row md:space-y-0 md:space-x-4" data-menu-target="items">
+      <div id="menuItems" class="flex-col hidden space-x-0 space-y-1 md:min-w-fit md:items-center md:flex md:flex-row md:space-y-0 md:space-x-4" data-menu-target="items">
         <%= link_to page_path("videos"),class: "inline-block font-gotham-bold text-black no-underline font-bold text-base uppercase px-2.5 py-1 leading-6 align-baseline antialiased hover:bg-techntrade-yellow-400" do %>
           Videos
+        <% end %>
+        <% if current_admin %>
+          <%= button_to admins_sign_out_path, id: "sign_out_button", method: :delete, class: "inline-flex items-center gap-x-1.5 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" do %>
+            Sign out
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mr-0.5 h-5 w-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+            </svg>
+          <% end %>
         <% end %>
       </div>
     </nav>
