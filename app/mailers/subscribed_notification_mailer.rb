@@ -8,6 +8,6 @@ class SubscribedNotificationMailer < ApplicationMailer
   def subscribed(to:, unsubscribe_url:)
     self.template_model = { unsubscribe_url: }
 
-    mail(to:)
+    mail(to:, from:)
   end
 end
