@@ -98,4 +98,18 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
   config.action_mailer.default_url_options = { host: "shortruby.com", protocol: "https" }
   config.active_job.queue_adapter = :litejob
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV.fetch("SMTP_SERVER"),
+    port: ENV.fetch("SMTP_PORT"),
+    domain: ENV.fetch("SMTP_DOMAIN"),
+    user_name: ENV.fetch("SMTP_USERNAME"),
+    password: ENV.fetch("SMTP_PASSWORD"),
+    authentication: :cram_md5,
+    enable_starttls: true,
+    open_timeout: 5,
+    read_timeout: 5
+  }
+  config.action_mailer.perform_deliveries = true
 end
