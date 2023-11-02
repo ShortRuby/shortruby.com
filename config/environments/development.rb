@@ -77,17 +77,9 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
   config.action_mailer.default_url_options = { host: "localhost:3000", protocol: "http" }
   config.active_job.queue_adapter = :litejob
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: ENV.fetch("SMTP_SERVER"),
-    port: ENV.fetch("SMTP_PORT"),
-    domain: ENV.fetch("SMTP_DOMAIN"),
-    user_name: ENV.fetch("SMTP_USERNAME"),
-    password: ENV.fetch("SMTP_PASSWORD"),
-    authentication: :cram_md5,
-    enable_starttls: true,
-    open_timeout: 5,
-    read_timeout: 5
-  }
+  config.action_mailer.delivery_method = :postmark
+  config.action_mailer.postmark_settings = { api_token: Rails.application.credentials.postmark_api_token }
   config.action_mailer.perform_deliveries = true
 end
+
+Rails.application.routes.default_url_options[:host] = "localhost"

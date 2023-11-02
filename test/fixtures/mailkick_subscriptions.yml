@@ -1,0 +1,6 @@
+video_updates_subscription:
+  subscriber_type: Subscriber
+  subscriber_id: 1
+  list: "video_updates"
+  created_at: <%= 3.days.ago %>
+  updated_at: <%= 3.days.ago %>
