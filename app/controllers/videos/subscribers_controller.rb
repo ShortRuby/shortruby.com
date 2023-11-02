@@ -1,34 +1,26 @@
 # frozen_string_literal: true
 
 class Videos::SubscribersController < ApplicationController
-  before_action :check_existing_subscriber, only: [:create]
+  SUBSCRIBE_TO_LIST = "video_updates"
 
   def create
-    subscriber = Subscriber.new(subscriber_params)
-    if subscriber.save
-      subscriber.subscribe("video_updates")
-      SubscribedNotificationMailer.subscribed(
-        to: subscriber.email,
-        unsubscribe_url: new_videos_unsubscribe_url(subscriber)
-      ).deliver_later
-
-      flash[:notice] = "You've subscribed successfully!"
-    else
-      flash[:error] = "There was a problem subscribing you!"
-      redirect_to page_path("videos")
+    case subscribers_create.call
+    when Dry::Monads::Success
+      flash.now[:notice] = "You've subscribed successfully!"
+    when Dry::Monads::Failure
+      flash.now[:error] = "There was a problem subscribing you! #{subscriber.errors.full_messages.join(', ')}"
     end
   end
 
   private
 
-    def check_existing_subscriber
-      if Subscriber.exists?(email: subscriber_params["email"])
-        flash[:notice] = "You are already subscribed!"
-        redirect_to page_path("videos")
-      end
-    end
+    def subscribers_create = Subscribers::Create.new(subscriber:, list:, unsubscribe_url:)
 
-    def subscriber_params
-      params.require(:subscriber).permit(:email)
-    end
+    def unsubscribe_url = new_videos_unsubscribe_url
+
+    def subscriber = @_subscriber ||= Subscriber.new(subscriber_params)
+
+    def list = SUBSCRIBE_TO_LIST
+
+    def subscriber_params = params.require(:subscriber).permit(:email)
 end

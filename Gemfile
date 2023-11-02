@@ -50,6 +50,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem "avo", ">= 3.0.1.beta9", source: "https://packager.dev/avo-hq/"
+gem "dry-monads"
 gem "litestack", "~> 0.4.1"
 gem "mailkick", "~> 1.2"
 gem "passwordless", "~> 1.0", git: "https://github.com/lucianghinda/passwordless", branch: "lg/add-notice-when-sign-out"
@@ -81,5 +82,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
+  gem "mocha"
   gem "selenium-webdriver"
 end
