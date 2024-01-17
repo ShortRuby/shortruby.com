@@ -57,6 +57,7 @@ gem "passwordless", "~> 1.0", git: "https://github.com/lucianghinda/passwordless
 gem "postmark"
 gem "postmark-rails"
 gem "sitepress-rails", "~> 4.0"
+gem "phlex-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
