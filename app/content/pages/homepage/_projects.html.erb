@@ -2,45 +2,10 @@
   <div class="px-6 mx-auto max-w-7xl lg:px-8">
     <div class="flow-root ">
       <div class="grid max-w-sm grid-cols-1 isolate gap-y-16 gap-x-6 sm:mx-auto lg:-mx-8 lg:mt-0 lg:max-w-none lg:grid-cols-3 xl:-mx-4">
-        <a href="https://newsletter.shortruby.com" aria-describedby="short-ruby-newsletter" class="relative flex flex-col p-6 pt-16 bg-white border border-gray-200 rounded-lg group lg:px-8 lg:pt-8 xl:px-14 hover:bg-blue-200">
-          <span class="absolute top-0 right-0 flex w-5 h-5 -mt-2 -mr-2 opacity-0 group-hover:opacity-100">
-            <span class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-sky-400"></span>
-            <span class="relative inline-flex w-5 h-5 rounded-full bg-sky-500"></span>
-          </span>
-          <h3 id="short-ruby-newsletter" class="h-16 text-4xl font-semibold leading-7 text-gray-900">Short Ruby Newsletter</h3>
-          <p class="items-baseline flex-grow mt-6 gap-x-1">
-            A Monday morning summary of the articles, discussions, and news from the Ruby community. I watch a series of places like Twitter, ruby.social, Reddit, Linkedin, Dev.to, Ruby LibHunt, and other news sources.
-          </p>
-          <span class="block px-3 py-2 mt-10 font-bold leading-6 text-center text-md">Read</span>
-        </a>
-        <a href="https://rubyandrails.info" aria-describedby="ruby-and-rails-info" class="relative flex flex-col p-6 pt-16 bg-white border border-gray-200 rounded-lg group lg:px-8 lg:pt-8 xl:px-14 hover:bg-blue-200">
-          <span class="absolute top-0 right-0 flex w-5 h-5 -mt-2 -mr-2 opacity-0 group-hover:opacity-100">
-            <span class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-sky-400"></span>
-            <span class="relative inline-flex w-5 h-5 rounded-full bg-sky-500"></span>
-          </span>
-          <h3 id="ruby-and-rails-info" class="h-16 text-4xl font-semibold leading-7 text-gray-900">RubyAndRails.Info</h3>
-          <p class="flex items-baseline flex-grow mt-6 gap-x-1">
-            A directory of resources for Ruby and Rails developers. It includes a list of Ruby and Rails podcasts, newsletters, blogs, books, and more. I am adding new resources every week.
-          </p>
-          <span class="block px-3 py-2 mt-10 font-bold leading-6 text-center text-md">Visit</span>
-        </a>
-        <a href="<%= page_path("videos") %>" aria-describedby="ruby-and-rails-info" class="relative flex flex-col p-6 pt-16 bg-white border border-gray-200 rounded-lg group lg:px-8 lg:pt-8 xl:px-14 hover:bg-blue-200">
-          <span class="absolute top-0 right-0 flex w-5 h-5 -mt-2 -mr-2 opacity-0 group-hover:opacity-100">
-            <span class="absolute inline-flex w-full h-full rounded-full opacity-75 animate-ping bg-sky-400"></span>
-            <span class="relative inline-flex w-5 h-5 rounded-full bg-sky-500"></span>
-          </span>
-          <h3 id="ruby-and-rails-info" class="h-16 text-4xl font-semibold leading-7 text-gray-900">Videos</h3>
-          <p class="flex items-baseline flex-grow mt-6 gap-x-1">
-            Video podcast format with organized debates about Ruby and Rails topics.
-          </p>
-          <span class="block px-3 py-2 mt-10 font-bold leading-6 text-center text-md">Visit</span>
-        </a>
-        <a href="#" aria-describedby="learning" class="flex flex-col p-6 pt-16 bg-white border border-gray-200 rounded-lg group lg:px-8 lg:pt-8 xl:px-14">
-          <h3 id="learning" class="h-16 text-4xl font-semibold leading-7 text-gray-900">Learning</h3>
-          <p class="flex items-baseline flex-grow mt-6 gap-x-1">
-            Soon. WIP
-          </p>
-        </a>
+        <%= render partial: "homepage/projects/newsletter" %>
+        <%= render partial: "homepage/projects/ruby_on_rails_info" %>
+        <%= render partial: "homepage/projects/email_courses" %>
+        <%= render partial: "homepage/projects/videos" %>
       </div>
     </div>
   </div>
