@@ -1,3 +1,5 @@
 {
-  "rubyLsp.rubyVersionManager": "chruby"
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "chruby"
+  }
 }
