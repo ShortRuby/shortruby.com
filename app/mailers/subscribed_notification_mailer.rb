@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "postmark-rails/templated_mailer"
-
 class SubscribedNotificationMailer < ApplicationMailer
   def subscribed
     to = params[:to]
