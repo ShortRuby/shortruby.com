@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Development
+
+Mailcatcher is used for local development.
+  http://127.0.0.1:1080
+
+Install mailcatcher:
+
+```bash
+gem install mailcatcher
+```

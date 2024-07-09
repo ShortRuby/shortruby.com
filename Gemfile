@@ -52,12 +52,11 @@ gem "bootsnap", require: false
 gem "avo", ">= 3.0.1.beta9", source: "https://packager.dev/avo-hq/"
 gem "dry-monads"
 gem "litestack", "~> 0.4.1"
+gem "mailersend-ruby"
 gem "mailkick", "~> 1.2"
 gem "passwordless", "~> 1.0", git: "https://github.com/lucianghinda/passwordless", branch: "lg/add-notice-when-sign-out"
-gem "postmark"
-gem "postmark-rails"
-gem "sitepress-rails", "~> 4.0"
 gem "phlex-rails"
+gem "sitepress-rails", "~> 4.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

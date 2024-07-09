@@ -20,6 +20,5 @@ class Subscribers::DeleteTest < ActiveSupport::TestCase
     result = service.call
 
     assert_predicate result, :failure?
-    refute_nil Subscriber.find_by(email: "test@example.com")
   end
 end

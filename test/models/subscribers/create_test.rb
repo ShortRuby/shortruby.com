@@ -8,15 +8,18 @@ module Subscribers
 
     setup do
       @list = "video_updates"
-
-
       @already_subscribed_subscriber = subscribers(:already_subscribed)  # Assuming you have a fixture or factory
       @unsubscribe_url = "http://example.com/unsubscribe"
     end
 
     test "should return success and send notification when subscriber is valid and not already subscribed" do
-      SubscribedNotificationMailer.expects(:subscribed).once.returns(stub(deliver_later: true))
-      subscriber = Subscriber.new(email: "test@example.com")
+      email = "test@example.com"
+      SubscribedEmailNotificationJob.
+        expects(:perform_later).
+        with(email, unsubscribe_url).
+        once.
+        returns(stub(deliver_later: true))
+      subscriber = Subscriber.new(email:)
 
       result = Create.new(subscriber:, list:, unsubscribe_url:).call
 
