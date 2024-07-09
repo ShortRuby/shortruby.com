@@ -77,8 +77,6 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
   config.action_mailer.default_url_options = { host: "localhost:3000", protocol: "http" }
   config.active_job.queue_adapter = :litejob
-  config.action_mailer.delivery_method = :postmark
-  config.action_mailer.postmark_settings = { api_token: Rails.application.credentials.postmark_api_token }
   config.action_mailer.perform_deliveries = true
 end
 
