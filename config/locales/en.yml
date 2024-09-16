@@ -29,3 +29,9 @@
 
 en:
   hello: "Hello world"
+
+  videos:
+    subscribers:
+      create:
+        success_message: "You've subscribed successfully!"
+        error_message: "There was a problem subscribing you! %{error_messages}"

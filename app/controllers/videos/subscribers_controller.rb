@@ -6,15 +6,21 @@ class Videos::SubscribersController < ApplicationController
   def create
     case subscribers_create.call
     when Dry::Monads::Success
-      flash.now[:notice] = "You've subscribed successfully!"
+      add_success_message
     when Dry::Monads::Failure
-      flash.now[:error] = "There was a problem subscribing you! #{subscriber.errors.full_messages.join(', ')}"
+      add_error_message
     end
   end
 
   private
 
     def subscribers_create = Subscribers::Create.new(subscriber:, list:, unsubscribe_url:)
+
+    def add_success_message = flash.now[:notice] = t(".success_message")
+
+    def add_error_message = flash.now[:error] = t(".error_message", error_messages:)
+
+    def error_messages = subscriber.errors.full_messages.join(", ")
 
     def unsubscribe_url = new_videos_unsubscribe_url
 
